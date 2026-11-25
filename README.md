@@ -2,6 +2,10 @@
 
 Personal portfolio for [sanskarsoni.vercel.app](https://sanskarsoni.vercel.app/). The site is a static, single-page application built with HTML, CSS, and JavaScript. The page source is in `index.html`; the profile image is in `assets/`.
 
+## Education
+
+B.Tech in Computer Science & Engineering (AI & ML), Newton School of Technology. Current academic year: 2026. Expected graduation: 2028. Program start: 2024.
+
 ## Technical Projects
 
 ### NEBULA — Groq AI Playground
@@ -9,7 +13,7 @@ Personal portfolio for [sanskarsoni.vercel.app](https://sanskarsoni.vercel.app/)
 - **Problem:** Model experiments are harder to inspect when prompt controls, model selection, and request feedback are spread across separate tools.
 - **Solution and architecture:** A JavaScript browser interface connects to a Groq API client for model requests and streamed responses. The repository also documents an optional Vercel Edge API route for proxy deployment. The streaming-style preview on this portfolio is simulated; it is not a live benchmark.
 - **Technology:** JavaScript, HTML, CSS, Groq API, `ReadableStream`/SSE, Vercel.
-- **My contribution:** Built the playground UI, model and prompt controls, stream display, and inference telemetry.
+- **Individual project:** Built the playground UI, model and prompt controls, stream display, and inference telemetry.
 - **Code and documentation:** [GROQ-PLAYGROUND repository and README](https://github.com/SANSKAR172009/GROQ-PLAYGROUND).
 
 ### MiniGit — Python Version-Control CLI
@@ -17,7 +21,7 @@ Personal portfolio for [sanskarsoni.vercel.app](https://sanskarsoni.vercel.app/)
 - **Problem:** Familiar Git commands hide how file contents become objects, trees, staged entries, and commits.
 - **Solution and architecture:** A Python CLI separates command handlers from shared repository helpers. The helpers manage SHA-1-addressed objects, trees and commits, the staging index, references, and working-tree paths.
 - **Technology:** Python, SHA-1, zlib, CLI.
-- **My contribution:** Built the Python implementation and the interactive command walkthrough in this portfolio. The browser walkthrough prints a demonstration; it does not execute the Python CLI.
+- **Individual project:** Built the Python implementation and the interactive command walkthrough in this portfolio. The browser walkthrough prints a demonstration; it does not execute the Python CLI.
 - **Code and documentation:** [MiniGit source](https://github.com/SANSKAR172009/LLM-PIPELINE-EXPLORER/tree/main/src/minigit), [architecture guide](https://github.com/SANSKAR172009/LLM-PIPELINE-EXPLORER/blob/main/docs/ARCHITECTURE.md), and [internals walkthrough](https://github.com/SANSKAR172009/LLM-PIPELINE-EXPLORER/blob/main/docs/internals-walkthrough.md).
 
 <a id="interactive-attention-demo"></a>
@@ -27,7 +31,7 @@ Personal portfolio for [sanskarsoni.vercel.app](https://sanskarsoni.vercel.app/)
 - **Problem:** Attention relationships can be difficult to discuss without a visual example.
 - **Solution and architecture:** A browser UI lets a visitor select one of four words and updates score bars from a fixed example-weight map. The weights are illustrative; the demo does not run a transformer or produce model outputs.
 - **Technology:** JavaScript, HTML, CSS, DOM events.
-- **My contribution:** Implemented the token interaction, score-bar rendering, and explanation of the demo's scope.
+- **Individual project:** Implemented the token interaction, score-bar rendering, and explanation of the demo's scope.
 - **Code and documentation:** [Portfolio source](https://github.com/SANSKAR172009/PORTFOLIO/blob/main/index.html).
 
 ## S&AI-Projects Contributions
