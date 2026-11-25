@@ -4,7 +4,7 @@ Personal portfolio for [sanskarsoni.vercel.app](https://sanskarsoni.vercel.app/)
 
 ## Education
 
-B.Tech in Computer Science & Engineering (AI & ML), Newton School of Technology. Current academic year: 2026. Expected graduation: 2028. Program start: 2024.
+B.Tech in Computer Science & Engineering (AI & ML), Newton School of Technology. Current academic year: 2026. Expected graduation: 2030.
 
 ## Technical Projects
 
