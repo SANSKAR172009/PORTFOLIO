@@ -1274,6 +1274,126 @@
       flex-grow: 1;
     }
 
+    .project-evidence {
+      display: grid;
+      gap: 0.8rem;
+      margin: 0 0 1.5rem;
+    }
+
+    .project-evidence p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .project-evidence strong {
+      display: block;
+      margin-bottom: 0.15rem;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .project-evidence a {
+      color: var(--neon-cyan);
+      text-underline-offset: 0.2em;
+    }
+
+    .contributions-summary {
+      max-width: 920px;
+      margin: 0 auto 2rem;
+      padding: 1.25rem 1.5rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+    }
+
+    .contributions-summary a,
+    .contribution-link {
+      color: var(--neon-cyan);
+      text-underline-offset: 0.2em;
+    }
+
+    .contributions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .contribution-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      min-width: 0;
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(16px);
+    }
+
+    .contribution-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .task-id,
+    .contribution-date,
+    .contribution-status {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+    }
+
+    .task-id {
+      color: var(--neon-cyan);
+      letter-spacing: 0.04em;
+    }
+
+    .contribution-date {
+      color: var(--text-dim);
+    }
+
+    .contribution-status {
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      background: rgba(251, 191, 36, 0.08);
+      border-radius: var(--radius-full);
+      padding: 0.22rem 0.65rem;
+    }
+
+    .contribution-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    .contribution-card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .contribution-card p strong {
+      color: var(--text-main);
+    }
+
+    .contribution-link {
+      align-self: flex-start;
+      margin-top: auto;
+      padding-top: 0.45rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
     .project-tech-pills {
       display: flex;
       flex-wrap: wrap;
@@ -1293,6 +1413,7 @@
 
     .project-footer-actions {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 0.85rem;
       padding-top: 1.4rem;
@@ -1380,10 +1501,23 @@
 
     .skill-row {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       font-size: 0.925rem;
       color: var(--text-muted);
+      gap: 0.8rem;
+    }
+
+    .skill-evidence {
+      color: inherit;
+      text-decoration: underline dotted;
+      text-underline-offset: 0.2em;
+      font-weight: 600;
+    }
+
+    .skill-evidence:hover {
+      color: var(--neon-cyan);
     }
 
     .skill-tag-pill {
@@ -1696,11 +1830,13 @@
         <nav>
           <ul class="nav-links" id="nav-drawer">
             <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#ai-arena" class="nav-link">AI Arena</a></li>
             <li><a href="#minigit-terminal" class="nav-link">MiniGit CLI</a></li>
+            <li><a href="#contributions" class="nav-link">S&amp;AI PRs</a></li>
             <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#journey" class="nav-link">Journey</a></li>
+            <li><a href="#journey" class="nav-link">Education</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
         </nav>
@@ -1736,9 +1872,10 @@
     <section id="home" class="hero">
       <div class="container hero-grid">
         <div class="hero-text-col">
+          <span class="section-tag" id="about">ABOUT ME</span>
           <div class="hero-status-pill">
             <span class="status-beacon"></span>
-            <span>First-Year B.Tech CSE (AI &amp; ML) &bull; Newton School</span>
+            <span>B.Tech CSE (AI &amp; ML) &bull; Newton School of Technology</span>
           </div>
 
           <h1 class="hero-title">
@@ -1754,12 +1891,12 @@
           </div>
 
           <p class="hero-bio">
-            Curious technologist at Newton School of Technology learning computer science from first principles. From designing ultra-fast LLM inference playgrounds with Groq to implementing custom Git internals in Python — I believe the best way to master technology is by building things that work.
+            I’m a B.Tech student in Computer Science &amp; Engineering (AI &amp; ML) at Newton School of Technology, focused on AI/ML, developer tools, and systems programming. I build and document working software, including NEBULA, a Groq-powered inference playground, and a Python MiniGit implementation. I’m seeking software engineering and AI/ML internship opportunities where I can contribute to practical products and grow through engineering work.
           </p>
 
           <div class="hero-actions">
             <a href="#ai-arena" class="btn btn-primary">
-              <span>Try Live AI Arena</span>
+              <span>Open Response Preview</span>
               <span>⚡</span>
             </a>
             <a href="#minigit-terminal" class="btn btn-secondary">
@@ -1820,14 +1957,14 @@
     </section>
 
     <!-- ==========================================================================
-         FEATURE 1: LIVE INTERACTIVE GROQ AI SIMULATOR & BENCHMARK ARENA
+       FEATURE 1: LOCAL NEBULA RESPONSE PREVIEW
          ========================================================================== -->
     <section id="ai-arena" class="arena-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">// 01. INTERACTIVE LIVE SIMULATOR</span>
-          <h2 class="section-title">Groq AI Inference Arena</h2>
-          <p class="section-subtitle">Experience how NEBULA leverages Groq LPUs for ~500 tokens/sec streaming throughput. Click a prompt below to benchmark!</p>
+          <span class="section-tag">// 01. LOCAL INTERACTIVE PREVIEW</span>
+          <h2 class="section-title">NEBULA Response Preview</h2>
+          <p class="section-subtitle">This portfolio preview simulates a streaming interface and sample metrics. The actual Groq API implementation and setup notes are in the linked NEBULA repository.</p>
         </div>
 
         <div class="arena-container">
@@ -1835,19 +1972,19 @@
             <div class="arena-title-wrap">
               <div class="arena-icon">⚡</div>
               <div>
-                <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 800;">LPU Ultra-Fast Inference Engine</h3>
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">Model: llama-3.3-70b-versatile &bull; Streaming Mode</span>
+                <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 800;">Streaming Interface Demonstration</h3>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">Sample response &bull; simulated stream</span>
               </div>
             </div>
 
             <div class="arena-telemetry">
               <div class="telemetry-stat">
                 <span class="telemetry-val" id="telemetry-tps">512 T/s</span>
-                <span class="telemetry-label">Throughput</span>
+                <span class="telemetry-label">Simulated throughput</span>
               </div>
               <div class="telemetry-stat">
                 <span class="telemetry-val" id="telemetry-ttft">19 ms</span>
-                <span class="telemetry-label">Latency (TTFT)</span>
+                <span class="telemetry-label">Simulated latency</span>
               </div>
               <div class="telemetry-stat">
                 <span class="telemetry-val" id="telemetry-tokens">0</span>
@@ -1863,8 +2000,8 @@
             <button class="prompt-chip" onclick="runAISimulation('skills')">🛠️ What are Sanskar's core skills?</button>
             <button class="prompt-chip" onclick="runAISimulation('transformer')">🧠 How does Self-Attention work?</button>
             <button class="prompt-chip" onclick="runAISimulation('newton')">🎓 Tell me about Newton School</button>
-            <button class="prompt-chip" onclick="runAISimulation('mun')">🏆 What did he learn from MUN &amp; Debating?</button>
-            <button class="prompt-chip" onclick="runAISimulation('future')">🚀 Engineering Roadmap for 2025–2026</button>
+            <button class="prompt-chip" onclick="runAISimulation('opensources')">📋 What are Sanskar’s S&amp;AI PRs?</button>
+            <button class="prompt-chip" onclick="runAISimulation('focus')">🚀 What does Sanskar want to work on?</button>
             <button class="prompt-chip" onclick="runAISimulation('mindset')">💡 Why 'Learn by Building'?</button>
             <button class="prompt-chip" onclick="runAISimulation('contact')">💼 How to hire or collaborate with him?</button>
           </div>
@@ -1926,14 +2063,113 @@
     </section>
 
     <!-- ==========================================================================
+         S&AI OPEN-SOURCE CONTRIBUTIONS
+         ========================================================================== -->
+    <section id="contributions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">// 03. COURSE OPEN SOURCE WORK</span>
+          <h2 class="section-title">S&amp;AI Open-Source Contributions</h2>
+          <p class="section-subtitle">Task-by-task record of my submitted work in the S&amp;AI-Projects curriculum repository.</p>
+        </div>
+
+        <p class="contributions-summary">
+          Repository: <a href="https://github.com/S-AI-Projects/ML-For-Beginners" target="_blank" rel="noopener noreferrer">S-AI-Projects / ML-For-Beginners</a>. I submitted these 10 pull requests from 18–20 November 2026. All were open on 25 November 2026; the links below show the official review status and code changes.
+        </p>
+
+        <div class="contributions-grid">
+          <article class="contribution-card">
+            <div class="contribution-meta"><span class="task-id">Task ID: R37-T011</span><span class="contribution-date">18 Nov 2026</span><span class="contribution-status">Open</span></div>
+            <h3 class="contribution-title">Bounded reinforcement-learning state chain</h3>
+            <p><strong>Code change:</strong> Added a standard-library, three-state local simulation with left/right actions, transition observations, terminal reward, and a five-step episode cap.</p>
+            <p><strong>Rationale:</strong> Makes state, action, transition, and reward behavior testable in a deterministic fixture without implying Gym physics or learned performance.</p>
+            <a class="contribution-link" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/77" target="_blank" rel="noopener noreferrer">View PR #77 ↗</a>
+          </article>
+
+          <article class="contribution-card">
+            <div class="contribution-meta"><span class="task-id">Task ID: R37-T012</span><span class="contribution-date">18 Nov 2026</span><span class="contribution-status">Open</span></div>
+            <h3 class="contribution-title">Cosine similarity boundary example</h3>
+            <p><strong>Code change:</strong> Added a local Python example for cosine similarity, including clear handling for zero-norm, empty, mismatched, and invalid vectors.</p>
+            <p><strong>Rationale:</strong> Defines the zero-vector boundary explicitly, avoiding undefined division and making input failures predictable.</p>
+            <a class="contribution-link" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/78" target="_blank" rel="noopener noreferrer">View PR #78 ↗</a>
+          </article>
+
+          <article class="contribution-card">
+            <div class="contribution-meta"><span class="task-id">Task ID: R37-T013</span><span class="contribution-date">19 Nov 2026</span><span class="contribution-status">Open</span></div>
+            <h3 class="contribution-title">Applied scenario rubric checker</h3>
+            <p><strong>Code change:</strong> Added a local checker for required asset, threat, control, and residual-risk fields across three fictional scenarios, with PASS, FAIL, and REVIEW outcomes.</p>
+            <p><strong>Rationale:</strong> Automates structural completeness checks while leaving the quality of written control reasoning to a human reviewer.</p>
+            <a class="contribution-link" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/92" target="_blank" rel="noopener noreferrer">View PR #92 ↗</a>
+          </article>
+
+          <article class="contribution-card">
+            <div class="contribution-meta"><span class="task-id">Task ID: R37-T014</span><span class="contribution-date">19 Nov 2026</span><span class="contribution-status">Open</span></div>
+            <h3 class="contribution-title">Local token-budget preflight</h3>
+            <p><strong>Code change:</strong> Added a whitespace-based token-budget example with an intermediate trace and a final retained-token and truncation report.</p>
+            <p><strong>Rationale:</strong> Demonstrates budget accounting without an external model, and labels whitespace splitting as a teaching approximation rather than a model tokenizer.</p>
+            <a class="contribution-link" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/93" target="_blank" rel="noopener noreferrer">View PR #93 ↗</a>
+          </article>
+
+          <article class="contribution-card">
+            <div class="contribution-meta"><span class="task-id">Task ID: R37-T015</span><span class="contribution-date">20 Nov 2026</span><span class="contribution-status">Open</span></div>
+            <h3 class="contribution-title">Offline token-budget adapter</h3>
+            <p><strong>Code change:</strong> Added a callable tokenizer interface with a local whitespace-splitting adapter, budget accounting, and empty-input and negative-budget cases.</p>
+            <p><strong>Rationale:</strong> Separates token counting from the lesson logic so the example is testable offline and does not overstate how real model tokenizers behave.</p>
+            <a class="contribution-link" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/94" target="_blank" rel="noopener noreferrer">View PR #94 ↗</a>
+          </article>
+
+          <article class="contribution-card">
+            <div class="contribution-meta"><span class="task-id">Task ID: R37-T016</span><span class="contribution-date">20 Nov 2026</span><span class="contribution-status">Open</span></div>
+            <h3 class="contribution-title">Introduction lesson rubric example</h3>
+            <p><strong>Code change:</strong> Added a local checker for scenario fields and threat/control pairings, with tests for complete, incomplete, and review-needed cases.</p>
+            <p><strong>Rationale:</strong> Makes rubric completeness reproducible and keeps subjective explanation quality in human review.</p>
+            <a class="contribution-link" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/95" target="_blank" rel="noopener noreferrer">View PR #95 ↗</a>
+          </article>
+
+          <article class="contribution-card">
+            <div class="contribution-meta"><span class="task-id">Task ID: R37-T017</span><span class="contribution-date">20 Nov 2026</span><span class="contribution-status">Open</span></div>
+            <h3 class="contribution-title">Chronological time-series split</h3>
+            <p><strong>Code change:</strong> Added timestamp validation and a chronological 60/20/20 train, validation, and test split for a synthetic dataset.</p>
+            <p><strong>Rationale:</strong> Keeping later observations out of training reduces future-data leakage in time-series evaluation.</p>
+            <a class="contribution-link" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/96" target="_blank" rel="noopener noreferrer">View PR #96 ↗</a>
+          </article>
+
+          <article class="contribution-card">
+            <div class="contribution-meta"><span class="task-id">Task ID: R37-T018</span><span class="contribution-date">20 Nov 2026</span><span class="contribution-status">Open</span></div>
+            <h3 class="contribution-title">Validate tool actions before execution</h3>
+            <p><strong>Code change:</strong> Added an allow-list and argument-schema gate ahead of a stub executor, rejecting unknown tools and incomplete requests before execution.</p>
+            <p><strong>Rationale:</strong> Demonstrates a clear validation boundary and failure recovery without calling real tools or touching external systems.</p>
+            <a class="contribution-link" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/97" target="_blank" rel="noopener noreferrer">View PR #97 ↗</a>
+          </article>
+
+          <article class="contribution-card">
+            <div class="contribution-meta"><span class="task-id">Task ID: R37-T019</span><span class="contribution-date">20 Nov 2026</span><span class="contribution-status">Open</span></div>
+            <h3 class="contribution-title">Real-world scenario rubric exercise</h3>
+            <p><strong>Code change:</strong> Added fictional education, retail, and healthcare scenarios plus a checker for required fields and control/threat mismatches.</p>
+            <p><strong>Rationale:</strong> Tests the rubric across several contexts while routing uncertain pairings to human review instead of claiming automated judgment.</p>
+            <a class="contribution-link" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/98" target="_blank" rel="noopener noreferrer">View PR #98 ↗</a>
+          </article>
+
+          <article class="contribution-card">
+            <div class="contribution-meta"><span class="task-id">Task ID: R37-T020</span><span class="contribution-date">20 Nov 2026</span><span class="contribution-status">Open</span></div>
+            <h3 class="contribution-title">Binary classification metrics lab</h3>
+            <p><strong>Code change:</strong> Added a deterministic Python example for TP, FN, FP, TN, precision, and recall, with checks for mismatched labels and no predicted positives.</p>
+            <p><strong>Rationale:</strong> Makes metric calculations and the zero-denominator policy explicit and reproducible for the lesson.</p>
+            <a class="contribution-link" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/99" target="_blank" rel="noopener noreferrer">View PR #99 ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
          FEATURED BUILDS / PROJECTS SECTION
          ========================================================================== -->
     <section id="projects">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">// 03. CODE &amp; ARCHITECTURE</span>
+          <span class="section-tag">// 04. CODE &amp; ARCHITECTURE</span>
           <h2 class="section-title">Featured Projects</h2>
-          <p class="section-subtitle">Real, working systems focused on high-speed LLM inference, Git internals, and AI pipeline visualizations.</p>
+          <p class="section-subtitle">Project write-ups include the problem, implementation approach, stack, my contribution, and a code or documentation link.</p>
         </div>
 
         <div class="projects-grid">
@@ -1945,17 +2181,22 @@
             </div>
             <h3 class="project-title">NEBULA — Groq AI Playground</h3>
             <p class="project-desc">
-              High-throughput developer workspace harnessing Groq Language Processing Units (LPUs) for ultra-fast token streaming. Includes live speed metrics (tokens/second), model switching (Llama 3, Mixtral), prompt parameter tuning, and reasoning trace capture.
+              An AI playground for exploring model responses, prompt analysis, and streaming inference through Groq. The interface exposes model controls and response telemetry so a user can inspect a request as it runs.
             </p>
+            <div class="project-evidence">
+              <p><strong>Problem</strong>Model experimentation is difficult to compare when prompt controls and request feedback are scattered across tools.</p>
+              <p><strong>Architecture</strong>A JavaScript browser interface connects to a Groq API client for model requests and streamed responses; an optional Vercel Edge API route is documented for proxy deployment.</p>
+              <p><strong>My contribution</strong>I built the playground interface, model and prompt controls, streaming display, and inference telemetry.</p>
+            </div>
             <div class="project-tech-pills">
               <span class="tech-pill">Groq LPU API</span>
               <span class="tech-pill">JavaScript</span>
-              <span class="tech-pill">Real-time Streaming</span>
+              <span class="tech-pill">ReadableStream / SSE</span>
               <span class="tech-pill">Vercel</span>
             </div>
             <div class="project-footer-actions">
               <a href="https://github.com/SANSKAR172009/GROQ-PLAYGROUND" target="_blank" rel="noopener noreferrer" class="project-link-btn">
-                <span>View Source</span>
+                <span>Repository &amp; README</span>
                 <span>&nearr;</span>
               </a>
               <a href="#ai-arena" class="project-link-btn" style="background: rgba(6, 182, 212, 0.15); color: var(--neon-cyan);">
@@ -1971,19 +2212,28 @@
               <div class="project-icon-badge">📦</div>
               <span class="project-status-tag">Systems &amp; VCS</span>
             </div>
-            <h3 class="project-title">MiniGit — Version Control From Scratch</h3>
+            <h3 class="project-title">MiniGit — Python Version-Control CLI</h3>
             <p class="project-desc">
-              A custom implementation of Git internal mechanics built to understand content-addressable storage, SHA-1 blob generation, commit graph trees, staging index manipulation, and branch refs from first principles.
+              A Python implementation that makes Git’s object model and repository operations inspectable. The portfolio’s terminal is a browser-side demonstration of selected commands; it does not execute the Python CLI.
             </p>
+            <div class="project-evidence">
+              <p><strong>Problem</strong>Git’s object model is hidden behind familiar commands, making it hard to see how files become stored snapshots.</p>
+              <p><strong>Architecture</strong>Python command modules work with repository objects, the staging index, references, and the working tree. Architecture notes and source modules are linked below.</p>
+              <p><strong>My contribution</strong>I built the Python implementation and this portfolio’s interactive command walkthrough to explain object hashing, staging, commits, and status.</p>
+            </div>
             <div class="project-tech-pills">
               <span class="tech-pill">Python</span>
-              <span class="tech-pill">Git Architecture</span>
-              <span class="tech-pill">Hashing &amp; Blobs</span>
-              <span class="tech-pill">CLI Tooling</span>
+              <span class="tech-pill">SHA-1 Objects</span>
+              <span class="tech-pill">Trees &amp; Commits</span>
+              <span class="tech-pill">CLI</span>
             </div>
             <div class="project-footer-actions">
-              <a href="https://github.com/SANSKAR172009/minigit" target="_blank" rel="noopener noreferrer" class="project-link-btn">
-                <span>View Source</span>
+              <a href="https://github.com/SANSKAR172009/LLM-PIPELINE-EXPLORER/tree/main/src/minigit" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>Python Source</span>
+                <span>&nearr;</span>
+              </a>
+              <a href="https://github.com/SANSKAR172009/LLM-PIPELINE-EXPLORER/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>Architecture Notes</span>
                 <span>&nearr;</span>
               </a>
               <a href="#minigit-terminal" class="project-link-btn" style="background: rgba(139, 92, 246, 0.15); color: var(--neon-violet);">
@@ -1993,21 +2243,21 @@
             </div>
           </div>
 
-          <!-- Project 3: LLM Pipeline Explorer + Interactive Attention -->
+          <!-- Project 3: Interactive Self-Attention Explorer -->
           <div class="project-card tilt-card">
             <div class="project-header-bar">
               <div class="project-icon-badge">🧠</div>
-              <span class="project-status-tag">Visual Computing</span>
+              <span class="project-status-tag">Interactive Demo</span>
             </div>
-            <h3 class="project-title">LLM Pipeline Explorer</h3>
+            <h3 class="project-title">Self-Attention Explorer</h3>
             <p class="project-desc">
-              Interactive visualizer mapping the computational lifecycle of modern transformers: input tokenization, vector embeddings, multi-head self-attention matrices, temperature sampling, and token generation logits.
+              A small browser visualization that lets a visitor select a word and inspect its illustrative relationships to other words in a sample sentence.
             </p>
 
             <!-- Feature 3: Interactive Attention Matrix -->
             <div class="attention-box">
               <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--neon-cyan); display: flex; justify-content: space-between;">
-                <span>INTERACTIVE SELF-ATTENTION TOKENS</span>
+                <span>ILLUSTRATIVE ATTENTION WEIGHTS</span>
                 <span>Hover word &darr;</span>
               </div>
               <div class="attention-tokens">
@@ -2032,33 +2282,25 @@
               </div>
             </div>
 
+            <div class="project-evidence">
+              <p><strong>Problem</strong>Self-attention is easier to discuss when a learner can see how changing the selected token changes the displayed relationships.</p>
+              <p><strong>Architecture</strong>JavaScript reads a fixed example-weight map and updates the HTML score bars on token hover. The values are illustrative; no transformer model is running.</p>
+              <p><strong>My contribution</strong>I implemented the token interaction, score-bar rendering, and explanatory limits in this page.</p>
+            </div>
+            <div class="project-tech-pills">
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">HTML</span>
+              <span class="tech-pill">CSS</span>
+              <span class="tech-pill">DOM Interaction</span>
+            </div>
+
             <div class="project-footer-actions">
-              <a href="https://github.com/SANSKAR172009/LLM-PIPELINE-EXPLORER" target="_blank" rel="noopener noreferrer" class="project-link-btn">
-                <span>View Source</span>
+              <a href="https://github.com/SANSKAR172009/PORTFOLIO/blob/main/index.html" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>Source Code</span>
                 <span>&nearr;</span>
               </a>
-            </div>
-          </div>
-
-          <!-- Project 4: ML Foundations Lab -->
-          <div class="project-card tilt-card">
-            <div class="project-header-bar">
-              <div class="project-icon-badge">📊</div>
-              <span class="project-status-tag">Machine Learning</span>
-            </div>
-            <h3 class="project-title">Classic ML Algorithms Lab</h3>
-            <p class="project-desc">
-              Hands-on study and implementation of classical machine learning algorithms: linear and logistic regression, perceptrons, gradient descent optimizers, and loss calculation using core matrix mathematics.
-            </p>
-            <div class="project-tech-pills">
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">NumPy</span>
-              <span class="tech-pill">Optimization</span>
-              <span class="tech-pill">Algorithms</span>
-            </div>
-            <div class="project-footer-actions">
-              <a href="https://github.com/SANSKAR172009/ML-For-Beginners" target="_blank" rel="noopener noreferrer" class="project-link-btn">
-                <span>View Source</span>
+              <a href="https://github.com/SANSKAR172009/PORTFOLIO#interactive-attention-demo" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>Project Documentation</span>
                 <span>&nearr;</span>
               </a>
             </div>
@@ -2073,9 +2315,9 @@
     <section id="skills">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">// 04. CAPABILITIES &amp; STACK</span>
+          <span class="section-tag">// 05. SKILLS WITH EVIDENCE</span>
           <h2 class="section-title">Technical Capabilities</h2>
-          <p class="section-subtitle">Programming languages, AI/ML concepts, developer tools, and competitive debating experience.</p>
+          <p class="section-subtitle">Each skill links to code or a course pull request where I applied it.</p>
         </div>
 
         <div class="skills-grid">
@@ -2087,20 +2329,16 @@
             </div>
             <ul class="skill-item-rows">
               <li class="skill-row">
-                <span>Python</span>
-                <span class="skill-tag-pill">Algorithms &amp; Scripts</span>
+                <a class="skill-evidence" href="https://github.com/SANSKAR172009/LLM-PIPELINE-EXPLORER/tree/main/src/minigit" target="_blank" rel="noopener noreferrer">Python</a>
+                <span class="skill-tag-pill">CLI &amp; object model</span>
               </li>
               <li class="skill-row">
-                <span>JavaScript (ES6+)</span>
-                <span class="skill-tag-pill">Frontend &amp; Async</span>
+                <a class="skill-evidence" href="https://github.com/SANSKAR172009/GROQ-PLAYGROUND/tree/main/src/scripts" target="_blank" rel="noopener noreferrer">JavaScript</a>
+                <span class="skill-tag-pill">UI &amp; async streaming</span>
               </li>
               <li class="skill-row">
-                <span>HTML5 &amp; Modern CSS</span>
-                <span class="skill-tag-pill">Responsive Studio</span>
-              </li>
-              <li class="skill-row">
-                <span>C / C++ Basics</span>
-                <span class="skill-tag-pill">Memory &amp; Data Structs</span>
+                <a class="skill-evidence" href="https://github.com/SANSKAR172009/PORTFOLIO/blob/main/index.html" target="_blank" rel="noopener noreferrer">HTML &amp; CSS</a>
+                <span class="skill-tag-pill">Portfolio interface</span>
               </li>
             </ul>
           </div>
@@ -2113,20 +2351,20 @@
             </div>
             <ul class="skill-item-rows">
               <li class="skill-row">
-                <span>Groq LPU Inference</span>
-                <span class="skill-tag-pill">High T/s Streaming</span>
+                <a class="skill-evidence" href="https://github.com/SANSKAR172009/GROQ-PLAYGROUND/blob/main/src/scripts/api.js" target="_blank" rel="noopener noreferrer">Groq API streaming</a>
+                <span class="skill-tag-pill">Request &amp; stream client</span>
               </li>
               <li class="skill-row">
-                <span>Prompt Architecture</span>
-                <span class="skill-tag-pill">CoT, Few-Shot</span>
+                <a class="skill-evidence" href="https://github.com/SANSKAR172009/GROQ-PLAYGROUND/blob/main/src/scripts/analyzer.js" target="_blank" rel="noopener noreferrer">Prompt analysis</a>
+                <span class="skill-tag-pill">Local prompt heuristics</span>
               </li>
               <li class="skill-row">
-                <span>Neural Net Foundations</span>
-                <span class="skill-tag-pill">Perceptrons &amp; Weights</span>
+                <a class="skill-evidence" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/99" target="_blank" rel="noopener noreferrer">Classification metrics</a>
+                <span class="skill-tag-pill">Precision &amp; recall</span>
               </li>
               <li class="skill-row">
-                <span>Scientific Python</span>
-                <span class="skill-tag-pill">NumPy, Math</span>
+                <a class="skill-evidence" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/96" target="_blank" rel="noopener noreferrer">Time-series evaluation</a>
+                <span class="skill-tag-pill">Chronological split</span>
               </li>
             </ul>
           </div>
@@ -2139,46 +2377,46 @@
             </div>
             <ul class="skill-item-rows">
               <li class="skill-row">
-                <span>Git &amp; GitHub</span>
-                <span class="skill-tag-pill">Branching &amp; PRs</span>
+                <a class="skill-evidence" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/77" target="_blank" rel="noopener noreferrer">GitHub pull requests</a>
+                <span class="skill-tag-pill">Branch, submit, review</span>
               </li>
               <li class="skill-row">
-                <span>Vercel Cloud</span>
-                <span class="skill-tag-pill">CI / CD Deployment</span>
+                <a class="skill-evidence" href="https://github.com/SANSKAR172009/GROQ-PLAYGROUND/blob/main/vercel.json" target="_blank" rel="noopener noreferrer">Vercel deployment</a>
+                <span class="skill-tag-pill">Project configuration</span>
               </li>
               <li class="skill-row">
-                <span>UNIX Shell &amp; Bash</span>
-                <span class="skill-tag-pill">CLI Automation</span>
+                <a class="skill-evidence" href="https://github.com/SANSKAR172009/LLM-PIPELINE-EXPLORER/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">Git internals</a>
+                <span class="skill-tag-pill">Objects &amp; references</span>
               </li>
               <li class="skill-row">
-                <span>VS Code</span>
-                <span class="skill-tag-pill">Workstation Setup</span>
+                <a class="skill-evidence" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/78" target="_blank" rel="noopener noreferrer">Input validation</a>
+                <span class="skill-tag-pill">Boundary cases</span>
               </li>
             </ul>
           </div>
 
-          <!-- Card 4: Strengths -->
+          <!-- Card 4: Applied course work -->
           <div class="skill-card">
             <div class="skill-card-top">
-              <div class="skill-icon-wrap">🌟</div>
-              <h3 class="skill-card-title">Leadership &amp; Strengths</h3>
+              <div class="skill-icon-wrap">🧪</div>
+              <h3 class="skill-card-title">Testing &amp; Validation</h3>
             </div>
             <ul class="skill-item-rows">
               <li class="skill-row">
-                <span>Public Speaking</span>
-                <span class="skill-tag-pill">MUN &amp; Debating</span>
+                <a class="skill-evidence" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/94" target="_blank" rel="noopener noreferrer">Unit-testable examples</a>
+                <span class="skill-tag-pill">Offline Python fixtures</span>
               </li>
               <li class="skill-row">
-                <span>Open Source Culture</span>
-                <span class="skill-tag-pill">Hacktoberfest</span>
+                <a class="skill-evidence" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/97" target="_blank" rel="noopener noreferrer">Action validation</a>
+                <span class="skill-tag-pill">Allow-list &amp; schema</span>
               </li>
               <li class="skill-row">
-                <span>Fast Prototyping</span>
-                <span class="skill-tag-pill">Idea &rarr; Working Demo</span>
+                <a class="skill-evidence" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/98" target="_blank" rel="noopener noreferrer">Scenario checks</a>
+                <span class="skill-tag-pill">PASS / FAIL / REVIEW</span>
               </li>
               <li class="skill-row">
-                <span>Analytical Rigor</span>
-                <span class="skill-tag-pill">First Principles</span>
+                <a class="skill-evidence" href="https://github.com/S-AI-Projects/ML-For-Beginners/pull/77" target="_blank" rel="noopener noreferrer">Deterministic simulation</a>
+                <span class="skill-tag-pill">Bounded state transitions</span>
               </li>
             </ul>
           </div>
@@ -2192,9 +2430,9 @@
     <section id="journey">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">// 05. ACADEMIC &amp; LEADERSHIP</span>
-          <h2 class="section-title">Journey &amp; Milestones</h2>
-          <p class="section-subtitle">Academic foundations, open source collaboration, and parliamentary debating.</p>
+          <span class="section-tag">// 06. EDUCATION &amp; VERIFIED WORK</span>
+          <h2 class="section-title">Education &amp; Achievements</h2>
+          <p class="section-subtitle">Academic background and dated work that can be checked against its public source.</p>
         </div>
 
         <div class="timeline-container">
@@ -2207,7 +2445,7 @@
               </div>
               <h3 class="timeline-title-text">B.Tech in Computer Science &amp; Engineering (AI &amp; ML)</h3>
               <p class="timeline-body-text">
-                Studying core data structures, algorithmic complexity, discrete mathematics, and machine learning architectures. Emphasizing project-first development, system building, and collaborative engineering.
+                Newton School of Technology · Program start: 2024.
               </p>
             </div>
           </div>
@@ -2216,27 +2454,14 @@
             <div class="timeline-marker"></div>
             <div class="timeline-card">
               <div class="timeline-header-meta">
-                <span class="timeline-year-pill">October 2024</span>
-                <span class="timeline-institution">Global Open Source Initiative</span>
+                <span class="timeline-year-pill">18–20 November 2026</span>
+                <span class="timeline-institution">S-AI-Projects · ML-For-Beginners</span>
               </div>
-              <h3 class="timeline-title-text">Hacktoberfest Participant &amp; Open Source Contributor</h3>
+              <h3 class="timeline-title-text">10 Course Pull Requests Submitted</h3>
               <p class="timeline-body-text">
-                Contributed to public repositories via pull requests, worked with distributed Git workflows, engaged in code review etiquette, and learned open-source engineering practices.
+                Submitted ten documented contributions covering local ML examples, input boundaries, evaluation splits, rubric checks, and action validation. The PRs were open on 25 November 2026; that status is not presented as a merge.
               </p>
-            </div>
-          </div>
-
-          <div class="timeline-block">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="timeline-header-meta">
-                <span class="timeline-year-pill">High School &amp; College</span>
-                <span class="timeline-institution">Model United Nations &amp; Debates</span>
-              </div>
-              <h3 class="timeline-title-text">Competitive Parliamentary Debating &amp; Public Speaking</h3>
-              <p class="timeline-body-text">
-                Developed critical research synthesis, persuasion, and rapid problem deconstruction under strict time limits across regional and national conference committees.
-              </p>
+              <a class="contribution-link" href="#contributions">Review Task IDs and official PR links ↗</a>
             </div>
           </div>
         </div>
@@ -2249,7 +2474,7 @@
     <section id="contact">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">// 06. GET IN TOUCH</span>
+          <span class="section-tag">// 07. CONTACT</span>
           <h2 class="section-title">Let's Connect</h2>
           <p class="section-subtitle">
             Whether you want to discuss AI inference, collaborate on open-source software, or explore internship opportunities, feel free to reach out.
@@ -2321,7 +2546,7 @@
       </div>
       <ul class="cmd-results-list" id="cmd-list">
         <li class="cmd-item" onclick="cmdExec('nav-arena')">
-          <div class="cmd-item-left"><span>⚡</span><span>Open Groq AI Inference Arena</span></div>
+          <div class="cmd-item-left"><span>⚡</span><span>Open NEBULA Response Preview</span></div>
           <span class="cmd-item-shortcut">#ai-arena</span>
         </li>
         <li class="cmd-item" onclick="cmdExec('nav-minigit')">
@@ -2331,6 +2556,10 @@
         <li class="cmd-item" onclick="cmdExec('nav-projects')">
           <div class="cmd-item-left"><span>🚀</span><span>Explore Featured Projects</span></div>
           <span class="cmd-item-shortcut">#projects</span>
+        </li>
+        <li class="cmd-item" onclick="cmdExec('nav-contributions')">
+          <div class="cmd-item-left"><span>📋</span><span>Review S&amp;AI Pull Requests</span></div>
+          <span class="cmd-item-shortcut">#contributions</span>
         </li>
         <li class="cmd-item" onclick="cmdExec('nav-skills')">
           <div class="cmd-item-left"><span>🛠️</span><span>View Technical Stack &amp; Skills</span></div>
@@ -2364,7 +2593,7 @@
   <footer class="site-footer">
     <div class="container footer-flex">
       <div class="footer-copy">
-        &copy; <span id="current-year"></span> <strong>Sanskar Soni</strong> &bull; First-Year B.Tech CSE (AI &amp; ML) &bull; Newton School
+        &copy; <span id="current-year"></span> <strong>Sanskar Soni</strong> &bull; B.Tech CSE (AI &amp; ML) &bull; Newton School of Technology
       </div>
       <div>
         <a href="#home" class="btn btn-secondary btn-sm" style="text-decoration: none;">
@@ -2527,6 +2756,8 @@
         window.location.hash = 'minigit-terminal';
       } else if (action === 'nav-projects') {
         window.location.hash = 'projects';
+      } else if (action === 'nav-contributions') {
+        window.location.hash = 'contributions';
       } else if (action === 'nav-skills') {
         window.location.hash = 'skills';
       } else if (action === 'copy-email') {
@@ -2560,13 +2791,13 @@
     // 6. Interactive Groq AI Simulation Engine
     const aiResponses = {
       groq: "Groq LPUs (Language Processing Units) achieve extreme throughput (500+ Tokens/sec) by eliminating standard GPU memory bandwidth bottlenecks. Traditional GPUs rely on heavy HBM (High Bandwidth Memory) that throttles sequential token generation. In contrast, Groq's Tensor Streaming Processor architecture uses massive on-chip SRAM with deterministic compiler scheduling — delivering ultra-low latency inference for models like Llama 3.",
-      sanskar: "Sanskar Soni is a first-year B.Tech CSE (AI & ML) student at Newton School of Technology. A self-driven builder, Sanskar develops tools from first principles — building NEBULA (Groq AI Playground), MiniGit (custom version control internals), and exploring deep learning architectures, competitive debating, and open-source software.",
-      minigit: "MiniGit hashes objects using SHA-1 digest algorithms. When you run `minigit hash-object`, it formats the file contents with a header: `blob <size>\0<content>` and computes its SHA-1 hash (e.g. 4b825dc...). The resulting compressed file is stored under `.minigit/objects/4b/825dc...`, enabling instant content-addressable deduplication.",
-      skills: "Sanskar's core capabilities span:\n• Languages: Python (Data & Algorithms), JavaScript (ES6+ APIs), C/C++ (Foundations)\n• AI & ML: Groq LPU Inference, Prompt Engineering, Perceptron & Neural Net Fundamentals\n• Developer Systems: Git & GitHub, Vercel CI/CD, UNIX Shell Automation\n• Leadership: Competitive Parliamentary Debating (MUN) & Hacktoberfest Collaboration.",
+      sanskar: "Sanskar Soni is a B.Tech CSE (AI & ML) student at Newton School of Technology. His portfolio highlights NEBULA, a Groq-powered playground; a Python MiniGit implementation; an interactive self-attention demo; and ten S&AI course pull requests linked to their official GitHub records.",
+      minigit: "MiniGit demonstrates Git's content-addressable object model: file content is combined with a blob header, hashed with SHA-1, and stored by object ID. The portfolio's terminal is a browser-side simulation; the Python implementation and architecture notes are linked in the Projects section.",
+      skills: "Applied skills shown in this portfolio include Python CLI and object-model work, JavaScript interfaces and async streaming, HTML/CSS, Groq API integration, prompt analysis, classification metrics, chronological time-series splits, input validation, and GitHub pull-request workflows. Each skill links to code or a submitted PR.",
       transformer: "In Transformer models, Self-Attention allows every token in an input sequence to dynamically score its relevance against every other token. It works through Query (Q), Key (K), and Value (V) projections: Attention(Q, K, V) = softmax((Q * K^T) / sqrt(d_k)) * V. The scaled dot-product generates an attention weight distribution that tells the network where to focus context during generation.",
-      newton: "Newton School of Technology provides an industry-first engineering curriculum where students learn by building production-grade software rather than rote memorization. Sanskar is in his first year of B.Tech CSE (AI & ML), working on core data structures, algorithms, discrete mathematics, and applied artificial intelligence.",
-      mun: "Competitive Parliamentary Debating and Model United Nations (MUN) taught Sanskar how to deconstruct high-stakes problems, think on his feet, synthesize complex geopolitical research, and present arguments persuasively under strict time limits — crucial soft skills for technical leadership and engineering collaboration.",
-      future: "For 2025–2026, Sanskar's technical roadmap includes:\n1. Deep diving into PyTorch and custom transformer training runs.\n2. Extending MiniGit to support remote push/pull protocol and delta-compression packfiles.\n3. Contributing to upstream AI developer tools and participating in international hackathons.\n4. Seeking collaborative engineering internships in AI/ML and systems software.",
+      newton: "Sanskar is studying B.Tech in Computer Science & Engineering (AI & ML) at Newton School of Technology. His portfolio links project code and course contributions so visitors can inspect the work directly.",
+      opensources: "Sanskar submitted ten S&AI-Projects pull requests, Tasks R37-T011 through R37-T020, from 18–20 November 2026. They cover local ML examples, rubric checks, token-budget exercises, chronological validation splits, tool-action gates, and classification metrics. All ten were open on 25 November 2026; each official PR is linked in the contributions section.",
+      focus: "Sanskar is seeking software engineering and AI/ML internship opportunities, with current portfolio work focused on Python systems, AI/ML examples, and developer tools.",
       mindset: "'Learn by Building' means rejecting tutorial paralysis. When you write a Git clone from scratch, you truly understand DAGs, content hashes, and index trees. When you build a Groq inference playground, you understand memory bandwidth, streaming latency, and tokens/sec. Real bugs teach what textbooks cannot.",
       contact: "Sanskar is actively open to internship opportunities, research collaborations, hackathons, and mentorship. You can reach him directly at sanskarsoni531@gmail.com, connect on LinkedIn (Sanskar Soni), or explore his public repositories on GitHub (@SANSKAR172009)."
     };
@@ -2580,7 +2811,9 @@
       if (query.includes('hire') || query.includes('intern') || query.includes('job') || query.includes('contact') || query.includes('email')) {
         answer = aiResponses.contact;
       } else if (query.includes('project') || query.includes('built') || query.includes('make') || query.includes('repo')) {
-        answer = "Sanskar has built multiple high-impact projects:\n1. NEBULA (Groq AI Playground): Sub-second LLM streaming arena.\n2. MiniGit: Python version control implementation from first principles.\n3. LLM Pipeline Explorer: Visual attention & token generation mapping.\n4. ML Algorithms Lab: Classical statistical machine learning from scratch.\nCheck the Projects section below for live source code!";
+        answer = "The portfolio documents three technical builds:\n1. NEBULA: a Groq API playground with streaming UI and prompt tools.\n2. MiniGit: a Python Git-internals CLI plus a clearly labeled browser simulation.\n3. Self-Attention Explorer: an illustrative, fixed-weight browser demo.\nEach card links to its source and project documentation.";
+      } else if (query.includes('contribution') || query.includes('pull request') || query.includes('s&ai') || query.includes('task id') || query.includes('pr #')) {
+        answer = aiResponses.opensources;
       } else if (query.includes('git') || query.includes('minigit')) {
         answer = aiResponses.minigit;
       } else if (query.includes('groq') || query.includes('fast') || query.includes('lpu') || query.includes('nebula')) {
@@ -2592,9 +2825,9 @@
       } else if (query.includes('transformer') || query.includes('attention') || query.includes('ai') || query.includes('ml')) {
         answer = aiResponses.transformer;
       } else if (query.includes('mun') || query.includes('debate') || query.includes('speaking')) {
-        answer = aiResponses.mun;
+        answer = "No dated, verifiable debating or MUN achievement is listed here yet. The Education & Achievements section currently links the submitted S&AI course pull requests.";
       } else {
-        answer = `Regarding "${input.value.trim()}": As an AI & ML student at Newton School, Sanskar approaches technical problems from fundamental mathematical and systems principles. He specializes in Python, Groq LLM pipelines, Git internals, and rapid engineering prototyping. Feel free to connect via sanskarsoni531@gmail.com!`;
+        answer = `Regarding "${input.value.trim()}": Sanskar is a B.Tech CSE (AI & ML) student at Newton School of Technology. Explore the linked project code and S&AI course pull requests, or contact him at sanskarsoni531@gmail.com.`;
       }
 
       runAISimulationText(answer);
